@@ -3,12 +3,12 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.firefox.service import Service
 from behave import given, when, then
-import HomePage
-import PageOperations
+from HomePage import *
+from PageOperations import *
 
 driver = webdriver.Firefox(service=Service())
-#homePage = HomePage(driver)
-#pageOperations = PageOperations(driver)
+homePage = HomePage(driver)
+pageOperations = PageOperations(driver)
 
 
 class ResetAppState:
@@ -23,16 +23,16 @@ class ResetAppState:
 
     @given("Add {string} and {string} to the cart")
     def add_and_to_the_cart(self, string, string2):
-        self.pageOperations.findElementByIdAndClick(string)
-        self.pageOperations.findElementByIdAndClick(string2)
+        self.pageOperations.find_element_by_id_and_click(string)
+        self.pageOperations.find_element_by_id_and_click(string2)
 
     @when("The reset app state button is clicked")
     def the_reset_app_state_button_is_clicked(self):
-        self.pageOperations.findElementByIdAndClick("react-burger-menu-btn")
-        self.pageOperations.findElementByIdAndClick("reset_sidebar_link")
+        self.pageOperations.find_element_by_id_and_click("react-burger-menu-btn")
+        self.pageOperations.find_element_by_id_and_click("reset_sidebar_link")
 
     @then("Cart is empty")
     def cart_is_empty(self):
         
-        assert "0" in self.pageOperations.findElementByClassName("shopping_cart_badge")
-        self.homePage.quitDriver()
+        assert "0" in self.pageOperations.find_element_by_class_name("shopping_cart_badge")
+        self.homePage.quit_driver()
