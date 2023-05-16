@@ -1,4 +1,4 @@
-
+#JÓÓÓÓÓÓÓÓÓÓÓÓÓÓÓÓÓÓÓÓÓÓÓÓ!!!!!!!!!!
 
 from selenium import webdriver
 from HomePage import *
@@ -6,13 +6,12 @@ from PageOperations import *
 from behave import given, when, then
 
 driver = webdriver.Firefox()
-
 homePage = HomePage(driver)
 pageOperations = PageOperations(driver)
 
 @given("Open the homepage")
 def open_the_homepage(this):
-    homePage.login_open
+    homePage.login_open()
     
 
 @given("Login to the site")

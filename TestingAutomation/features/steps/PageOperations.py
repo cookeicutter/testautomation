@@ -1,3 +1,5 @@
+
+
 from typing import List
 from selenium.webdriver import *
 from selenium import *
@@ -18,16 +20,19 @@ class PageOperations:
 
     def find_element_by_id(self, element):
         #return self.driver.find_element_by_id(element)
-        return self.driver.find_element(By.ID, element)
+        teszt = self.driver.find_element(By.ID, element)
+        return teszt
 
     def find_element_by_id_and_click(self, element):
         self.driver.find_element(By.ID, element).click()
 
     def find_element_by_class_name(self, element):
-        return self.driver.self.driver.find_element(By.CLASS_NAME, element)
+        teszt = self.driver.find_element(By.CLASS_NAME, element)
+        return teszt
     
     def find_elements_by_class_name_list(self, element):
-        return self.driver.find_elements(By.CLASS_NAME, element)(element)
+        teszt = self.driver.find_elements(By.CLASS_NAME, element)
+        return teszt
 
     def find_element_by_class_name_and_click(self, element):
         self.driver.find_element(By.CLASS_NAME, element).click()

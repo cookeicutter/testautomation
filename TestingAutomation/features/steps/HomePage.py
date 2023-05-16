@@ -6,8 +6,7 @@ class HomePage:
     def __init__(self, driver: webdriver):
         self.driver = driver
 
-    def login(self):
-        
+    def login(self):        
         self.driver.get("https://www.saucedemo.com/")
         time.sleep(3)
         self.driver.find_element(By.ID, "user-name").send_keys("standard_user")
@@ -35,3 +34,4 @@ class HomePage:
 
     def quit_driver(self):
         self.driver.quit()
+        
