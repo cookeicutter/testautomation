@@ -9,7 +9,7 @@ class PageOperations:
     def __init__(self, driver: webdriver):
         self.driver = driver
 
-       
+        
     def open_url(self, url):
         self.driver.get(url)
 
@@ -17,20 +17,21 @@ class PageOperations:
         return self.driver.current_url
 
     def find_element_by_id(self, element):
-        return self.driver.find_element_by_id(element)
+        #return self.driver.find_element_by_id(element)
+        return self.driver.find_element(By.ID, element)
 
     def find_element_by_id_and_click(self, element):
-        self.driver.find_element_by_id(element).click()
+        self.driver.find_element(By.ID, element).click()
 
     def find_element_by_class_name(self, element):
-        return self.driver.find_element_by_class_name(element)
-
+        return self.driver.self.driver.find_element(By.CLASS_NAME, element)
+    
     def find_elements_by_class_name_list(self, element):
-        return self.driver.find_elements_by_class_name(element)
+        return self.driver.find_elements(By.CLASS_NAME, element)(element)
 
     def find_element_by_class_name_and_click(self, element):
-        self.driver.find_element_by_class_name(element).click()
+        self.driver.find_element(By.CLASS_NAME, element).click()
 
     def find_element_by_tag_name_and_click(self, element):
-        self.driver.find_element_by_tag_name(element).click()
+        self.driver.find_element(By.TAG_NAME, element).click()
 

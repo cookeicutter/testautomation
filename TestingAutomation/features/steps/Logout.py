@@ -13,12 +13,13 @@ pageOperations = PageOperations(driver)
 @given("Open the homepage")
 def open_the_homepage(this):
     homePage.login_open
-    driver.implicitly_wait(10)
+    
 
 @given("Login to the site")
 def login_to_the_site(this):
-    homePage.login_user_name("standard_user")
-    homePage.login_password("secret_sauce")
+    time.sleep(3)
+    homePage.login_user_name( "standard_user")
+    homePage.login_password( "secret_sauce")
     homePage.login_click()
 
 @when("The logout button clicked")

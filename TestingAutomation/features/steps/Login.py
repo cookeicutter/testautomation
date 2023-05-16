@@ -6,7 +6,6 @@ from PageOperations import *
 from behave import given, when, then
 
 driver = webdriver.Firefox()
-
 homePage = HomePage(driver)
 pageOperations = PageOperations(driver)
 
@@ -27,4 +26,4 @@ def the_login_button_clicked(this):
 def login_should_be_success(this):
     assert "inventory" in pageOperations.get_current_url()
     homePage.quit_driver()
-    driver.quit()
+    
