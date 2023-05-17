@@ -1,11 +1,14 @@
 from selenium import webdriver
 from HomePage import *
 from PageOperations import *
-from behave import given, when, then
+from behave import *
+
+
+
 
 class Purchase():
-    def __init__(self):        
-        self.driver = webdriver.Firefox()
+    def __init__(self, driver: webdriver):        
+        self.driver = driver
         self.homePage = HomePage(self.driver)
         self.pageOperations = PageOperations(self.driver)
 
@@ -30,8 +33,8 @@ class Purchase():
         self.pageOperations.find_element_by_id_and_click("checkout")
 
     @given("Fill the necessary fields with {string}, {string} and {string}")
-    def fill_the_necessary_fields_with_and(self, string, string2, string3):
-        self.pageOperations.find_element_by_id("first-name").send_keys(string)
+    def fill_the_necessary_fields_with_and(self, string1, string2, string3):
+        self.pageOperations.find_element_by_id("first-name").send_keys(string1)
         self.pageOperations.find_element_by_id("last-name").send_keys(string2)
         self.pageOperations.find_element_by_id("postal-code").send_keys(string3)
         self.pageOperations.find_element_by_id_and_click("continue")

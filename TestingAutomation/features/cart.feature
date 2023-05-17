@@ -7,8 +7,8 @@ Feature: Cart test
 
     Examples:
       | add-to-cart | remove-from-cart |
-      | "add-to-cart-sauce-labs-backpack" | "remove-sauce-labs-backpack" |
-      | "add-to-cart-sauce-labs-bike-light" | "remove-sauce-labs-bike-light" |
-      | "add-to-cart-sauce-labs-bolt-t-shirt" | "remove-sauce-labs-bolt-t-shirt" |
-      | "add-to-cart-sauce-labs-fleece-jacket" | "remove-sauce-labs-fleece-jacket" |
-      | "add-to-cart-sauce-labs-onesie" | "remove-sauce-labs-onesie" |
+      | add-to-cart-sauce-labs-backpack | remove-sauce-labs-backpack |
+      | add-to-cart-sauce-labs-bike-light | remove-sauce-labs-bike-light |
+      | add-to-cart-sauce-labs-bolt-t-shirt | remove-sauce-labs-bolt-t-shirt |
+      | add-to-cart-sauce-labs-fleece-jacket | remove-sauce-labs-fleece-jacket |
+      | add-to-cart-sauce-labs-onesie | remove-sauce-labs-onesie |

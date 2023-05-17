@@ -8,23 +8,27 @@ from HomePage import *
 from PageOperations import *
 
 
-driver1 = webdriver.Firefox()
-homePage = HomePage(driver1)
-pageOperations = PageOperations(driver1)
+
 
 @given("The user sign in to the site")
-def the_user_sign_in_to_the_site(this):
+def the_user_sign_in_to_the_site(context):
+    context.driver = webdriver.Firefox()
+    homePage = HomePage(context.driver) 
     homePage.login()
 
 @when("The about button clicked")
-def the_about_button_clicked(this):
+def the_about_button_clicked(context):
+    
+    pageOperations = PageOperations(context.driver)
     pageOperations.find_element_by_id_and_click("react-burger-menu-btn")
     pageOperations.find_element_by_id_and_click("about_sidebar_link")
+   
 
 @then("Redirection should be success")
-def redirection_should_be_success(this):
+def redirection_should_be_success(context):
+    homePage = HomePage(context.driver)
     time.sleep(2)
-    teszt = driver1.current_url
+    teszt = context.driver.current_url
      
     assert ( teszt == "https://saucelabs.com/")
     homePage.quit_driver()

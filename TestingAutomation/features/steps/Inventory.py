@@ -1,15 +1,15 @@
 import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-from behave import given, when, then
+from behave import *
 from HomePage import *
 from PageOperations import *
 
 class Inventory:
     def __init__(self):
         self.driver = webdriver.Firefox()
-        self.homePage = HomePage
-        self.pageOperations = PageOperations
+        self.homePage = HomePage(self.driver)
+        self.pageOperations = PageOperations(self.driver)
     
     @given("Open the inventory")
     def open_the_inventory(self):
