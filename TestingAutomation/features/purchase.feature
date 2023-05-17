@@ -11,7 +11,7 @@ Feature: Purchase item test
 
     Examples:
     | button | firstName | lastName | postalCode |
-    | "add-to-cart-sauce-labs-backpack" | "John" | "Smith" | "1234" |
-    | "add-to-cart-sauce-labs-bike-light" | "Agnes" | "Nichols" | "2345" |
-    | "add-to-cart-sauce-labs-onesie" | "Jack" | "Johnson" | "5678" |
-    | "add-to-cart-sauce-labs-fleece-jacket" | "Claire" | "Jefferson" | "9856" |
+    | add-to-cart-sauce-labs-backpack | John | Smith | 1234 |
+    | add-to-cart-sauce-labs-bike-light | Agnes | Nichols | 2345 |
+    | add-to-cart-sauce-labs-onesie | Jack | Johnson | 5678 |
+    | add-to-cart-sauce-labs-fleece-jacket | Claire | Jefferson | 9856 |
